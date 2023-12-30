@@ -46,22 +46,21 @@ const Home = () => {
  
 
   return (
-    <div className='homeMain'>
-     <div className='searchInput'>
+    <>
+
+<div className='searchInput'>
       <input type='text'
              placeholder='Search by name' 
              value={name}
              onChange={(e)=>setName(e.target.value)}
  />
  
-        <label>Min Price:</label>
         <input
           type='number'
           value={minPrice}
           onChange={(e) => setMinPrice(e.target.value)}
           placeholder='Min Price'
         />
-        <label>Max Price:</label>
         <input
           type='number'
           value={maxPrice}
@@ -73,8 +72,8 @@ const Home = () => {
       </div>
       </div>
 
-
-     
+    <div className='homeMain'>
+      
       {handleFilter().map((product)=>(
         <div className='productDiv' key={product.id}>
           <h3>{product.title}</h3>
@@ -86,7 +85,7 @@ const Home = () => {
         </div>
       ))}
 
-    </div>
+    </div></>
   )
 }
 
