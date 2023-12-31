@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import MoreInfo from '../components/MoreInfo.jsx'
 
 const Home = () => {
   const [productData,setProductData]=useState([])
@@ -7,6 +8,7 @@ const Home = () => {
   const [minPrice,setMinPrice]=useState()
   const [maxPrice,setMaxPrice]=useState()
   const [cart,setCart]=useState([])
+  const [showDiv,setShowDiv]=useState(null)
 
 
 
@@ -41,7 +43,13 @@ const Home = () => {
     return filteredProducts;
   };
  
-
+  const handleShowDiv=(product)=>{
+  setShowDiv(product)
+  }
+  const closeDiv=()=>{
+     setShowDiv(null)
+  }
+console.log(showDiv)
 
  
 
@@ -75,18 +83,21 @@ const Home = () => {
     <div className='homeMain'>
       
       {handleFilter().map((product)=>(
-        <div className='productDiv' key={product.id}>
+        <div className='productDiv' key={product.id} >
           <h3>{product.title}</h3>
-          <p>{product.description}</p>
+          {/* <p>{product.description}</p> */}
           <p>Rating:{product.rating}</p>
           <p><b>Price:${product.price}</b></p>
           <img src = {product.thumbnail}/>
-          <button onClick={() => addToCart(product)}>Add to cart</button>
+          <button onClick={()=>handleShowDiv(product)}>More Info</button>
         </div>
       ))}
+      {showDiv&& <MoreInfo data={showDiv} cartCount={cartCount} totalAmount={totalAmount} add={()=>addToCart(showDiv)} close={closeDiv}/>}
 
     </div></>
   )
 }
 
 export default Home
+
+{/* <button onClick={() => addToCart(product)}>Add to cart</button> */}
