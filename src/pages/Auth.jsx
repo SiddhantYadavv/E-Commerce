@@ -8,6 +8,12 @@ const Auth = (props) => {
   const [token, setToken] = useState('');
   const navigate = useNavigate()
 
+  const dummyCred=(e)=>{
+    e.preventDefault()
+    setUsername("kminchelle")
+    setPassword("0lelplR")
+  }
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -56,9 +62,13 @@ const Auth = (props) => {
         <button type="submit" className="auth-button">
           Login
         </button>
+        <button onClick={dummyCred} className="dummy-button">
+          Get dummy credentials
+        </button>
       </form>
     </div>
   );
 };
 
 export default Auth;
+
