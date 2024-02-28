@@ -1,8 +1,19 @@
-# React + Vite
+# E-Commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This E-Commerce web application is designed to showcase information about products from an Api with search functionality.
 
-Currently, two official plugins are available:
+## Getting Started
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/SiddhantYadavv/E-Commerce
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **Navigate to the Directory:**
+   ```bash
+   cd E-Commerce
+3. **Install Dependencies:**
+   ```bash
+   npm i
+4. **Run the server:**
+   ```bash
+   npm run dev
+
